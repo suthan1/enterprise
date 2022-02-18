@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('HI') {
+            steps {
+                echo 'Hi hello'
+            }
+        }
+        stage('SCM') {
+            steps {
+                git branch: 'main', url: 'https://github.com/sutlavu/enterprise.git'
+            }
+        }
+    }
+}
